@@ -64,3 +64,6 @@ Layout/EndOfLine:
 
 Lint/MixedCaseRange:
   Enabled: false
+
+Layout/LineLength:
+  Enabled: false
