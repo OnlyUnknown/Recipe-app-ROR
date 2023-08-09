@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1 or /recipes/1.json
   def show
-  @current_user = current_user.id
+    @current_user = current_user.id
   end
 
   # GET /recipes/new
