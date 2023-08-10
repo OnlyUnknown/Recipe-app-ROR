@@ -33,8 +33,11 @@
   <h1>store</h1>
 
 <div id="foods">
+<% url = request.path_info%>
+<%if url.include?("edit") == false%>
   <% @foods.each do |food| %>
     <%= render food %>
+  <% end %>
   <% end %>
 </div>
 <% end %>
