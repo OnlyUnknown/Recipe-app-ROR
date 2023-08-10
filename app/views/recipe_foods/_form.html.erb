@@ -17,16 +17,24 @@
   </div>
 
   <div>
-    <%= form.label :recipe_id, style: "display: block" %>
-    <%= form.text_field :recipe_id %>
+    <%= form.hidden_field :recipe_id, style: "display: block" %>
+    <%= form.hidden_field :recipe_id, value: params[:id] %>
   </div>
 
   <div>
-    <%= form.label :food_id, style: "display: block" %>
-    <%= form.text_field :food_id %>
+    Select food by ID<%= form.label :food_id, style: "display: block" %>
+    <%=form.text_field :food_id%>
+
   </div>
 
   <div>
     <%= form.submit %>
   </div>
+  <h1>store</h1>
+
+<div id="foods">
+  <% @foods.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
 <% end %>
