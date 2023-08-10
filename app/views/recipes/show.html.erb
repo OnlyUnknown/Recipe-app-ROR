@@ -4,10 +4,11 @@
 
 <div>
 <%if @recipe.user_id == @current_user%>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> | 
+  <%= link_to "New recipe food", params[:id] + "/new" %> |
   <%end%>
-  <%= link_to "Back to recipes", recipes_path %>
   <%if @recipe.user_id == @current_user%>
   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
   <%end%>
+  
 </div>
