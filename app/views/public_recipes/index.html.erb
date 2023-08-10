@@ -1,2 +1,11 @@
-<h1>PublicRecipes#show</h1>
-<p>Find me in app/views/public_recipes/show.html.erb</p>
+
+<h1>Public Recipes</h1>
+
+<div id="recipes">
+  <% @recipes.each do |recipe| %>
+    <%= render recipe %>
+    <p>
+      <%= link_to "Show this recipe", recipe %>
+    </p>
+  <% end %>
+</div>
