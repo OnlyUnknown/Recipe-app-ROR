@@ -5,13 +5,13 @@
 <div>
 <%if @recipe.user_id == @current_user%>
   <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> | 
-  <%= link_to "New recipe food", params[:id] + "/new" %> |
+  <%= link_to "Add ingredient", params[:id] + "/new" %> |
   <%end%>
   <%if @recipe.user_id == @current_user%>
   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
   <%end%>
   
-  <h1>Recipe foods</h1>
+  <h1>Ingredients</h1>
 
 <div id="recipe_foods">
   <% @recipe_foods.each do |recipe_food| %>
@@ -22,5 +22,4 @@
   <% end %>
 </div>
 
-<%= link_to "New recipe food", new_recipe_food_path %>
 </div>
