@@ -19,7 +19,7 @@
     <%= recipe.description %>
   </p>
 
-  <%if @recipe.user_id == @current_user%>
+  <%if recipe.user_id == current_user%>
   <p>
     <strong>Public:</strong>
     <%= recipe.public %>

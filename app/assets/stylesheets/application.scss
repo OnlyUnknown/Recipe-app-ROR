@@ -14,12 +14,110 @@
  *= require_self
  */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Lato", sans-serif;
-  color: red;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.row {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page {
+  padding: 2rem 0;
+}
+
+.header {
+  border-bottom: #ddd 1px solid;
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // height: 6rem;
+    .logo {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #333;
+    }
+  }
+}
+
+.nav {
+  height: 6rem;
+
+  .nav-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+}
+
+.sign-in,
+.sign-up,
+.update-user-details {
+  form {
+    width: 60rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input {
+      padding: 0.8rem 1.2rem;
+      border-radius: 2px;
+      border: #ddd 1px solid;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #666;
+      }
+    }
+  }
 }
