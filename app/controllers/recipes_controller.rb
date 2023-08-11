@@ -8,14 +8,9 @@ class RecipesController < ApplicationController
 
   def toggle
     @recipe = Recipe.find(params[:id])
-    if @recipe.public == true
-      @recipe.public = false
-      @recipe.save
-    else
-      @recipe.public = true
-      @recipe.save
-    end
-    redirect_to "/recipes/" + params[:id]
+    @recipe.public = @recipe.public != true
+    @recipe.save
+    redirect_to "/recipes/#{params[:id]}"
   end
 
   # GET /recipes/1 or /recipes/1.json
