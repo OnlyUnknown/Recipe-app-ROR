@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
 
   # GET /foods or /foods.json
   def index
-    @foods = Food.where(user_id: current_user.id).includes(:user)
+    @foods = Food.where(user_id: current_user).includes(:user)
   end
 
   # GET /foods/1 or /foods/1.json
@@ -12,7 +12,7 @@ class FoodsController < ApplicationController
   # GET /foods/new
   def new
     @food = Food.new
-    @food.user_id = current_user.id
+    @food.user_id = current_user
   end
 
   # GET /foods/1/edit

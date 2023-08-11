@@ -1,17 +1,20 @@
 <div id="<%= dom_id recipe_food %>">
+<p>
+<strong>Food:</strong>
+<%= recipe_food.food.name %>
+</p>
+
   <p>
     <strong>Quantity:</strong>
     <%= recipe_food.quantity %>
   </p>
 
   <p>
-    <strong>Recipe:</strong>
-    <%= recipe_food.recipe_id %>
-  </p>
+  <strong>value:</strong>
+  <%@value = recipe_food.quantity.to_i * recipe_food.food.price.to_i %>
+  $<%= @value %>
+</p>
 
-  <p>
-    <strong>Food:</strong>
-    <%= recipe_food.food_id %>
-  </p>
+
 
 </div>
