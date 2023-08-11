@@ -19,10 +19,13 @@
     <%= recipe.description %>
   </p>
 
+  <%if @recipe.user_id == @current_user%>
   <p>
     <strong>Public:</strong>
     <%= recipe.public %>
+    <%= link_to "change the status", params[:id] + '/toggled'%>
   </p>
+  <%end%>
 
   <p>
     <strong>User:</strong>
