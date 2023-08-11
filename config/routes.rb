@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :recipe_foods
   get 'recipes/:id/new', to: 'recipe_foods#new'
+  get 'recipes/:id/toggled', to: 'recipes#toggle'
   resources :foods
   resources :recipes
   resources :users
