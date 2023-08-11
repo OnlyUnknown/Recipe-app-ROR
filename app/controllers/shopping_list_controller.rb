@@ -6,7 +6,7 @@ class ShoppingListController < ApplicationController
 
     @total_price = @ingredients.map do |_food, ingredients|
       ingredients.map do |ingredient|
-        ingredient.food.price * ingredient.quantity
+        ingredient.food.price.to_i * ingredient.quantity.to_i
       end.sum
     end.sum
   end

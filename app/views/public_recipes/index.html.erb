@@ -21,7 +21,7 @@
     <strong>Total price:</strong>
     <% @totalv = 0 %>
     <%@precipe.each do |pr|%>
-     <% @totalv += pr.food.price * pr.quantity%>
+     <% @totalv += pr.food.price.to_i * pr.quantity.to_i %>
      <%end%>   
      $<%=@totalv%>
   </p>
