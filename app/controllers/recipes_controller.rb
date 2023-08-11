@@ -6,6 +6,18 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where(user_id: current_user.id).includes(:user)
   end
 
+  def toggle
+    @recipe = Recipe.find(params[:id])
+    if @recipe.public == true
+      @recipe.public = false
+      @recipe.save
+    else
+      @recipe.public = true
+      @recipe.save
+    end
+    redirect_to "/recipes/" + params[:id]
+  end
+
   # GET /recipes/1 or /recipes/1.json
   def show
     @current_user = current_user.id
