@@ -3,7 +3,31 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
+    <% @precipe = RecipeFood.where(recipe_id: recipe.id)%>
+    <div id="<%= dom_id recipe %>">
+  <p>
+    <h3><%= recipe.name %></h3>
+    <strong>by:</strong>
+    <%= recipe.user.name %>
+  </p>
+
+  <p>
+  <strong>Total food items:</strong>
+  <%=@precipe.length%>
+</p>
+
+
+  <p>
+    <strong>Total price:</strong>
+    <% @totalv = 0 %>
+    <%@precipe.each do |pr|%>
+     <% @totalv += pr.food.price * pr.quantity%>
+     <%end%>   
+     $<%=@totalv%>
+  </p>
+
+</div>
+
     <p>
       <%= link_to "Show this recipe", recipe %>
     </p>
