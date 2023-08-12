@@ -1,29 +1,11 @@
-<div id="<%= dom_id food %>">
-<p>
-    <strong>id:</strong>
-    <%= food.id %>
-  </p>  
+<tr id="<%= dom_id food %>">
+    <td> <%= food.name %></td>
+    <td><%= food.measurement_unit %></td>
+    <td><%= food.price %></td>
+    <td>
+     <button><%= link_to "Show details", food %></button>   
+     <button><%= link_to "Edit", edit_food_path(food) %></button>   
+     <button><%= link_to "Delete", food, :confirm => "Are you sure?", :method => :delete %></button>            
+    </td>
+</tr>
 
-
-<p>
-    <strong>Name:</strong>
-    <%= food.name %>
-  </p>
-
-  <p>
-    <strong>Measurement unit:</strong>
-    <%= food.measurement_unit %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= food.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= food.quantity %>
-  </p>
-
-
-</div>
