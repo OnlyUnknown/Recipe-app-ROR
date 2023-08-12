@@ -1,35 +1,12 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
-    <%= recipe.name %>
-  </p>
-
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p>
-    <strong>Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <%if recipe.user_id == current_user%>
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-    <%= link_to "change the status", params[:id] + '/toggled'%>
-  </p>
-  <%end%>
-
-  <p>
-    <strong>User:</strong>
-    <%= recipe.user_id %>
-  </p>
-
+<div id="<%= dom_id recipe %>" class="recipe-card">
+   <div class="summary">
+       <%= recipe.name %>
+       <div class="btns">
+      <%= link_to "Remove", recipe, :confirm => "Are you sure?", :method => :delete %>
+      <%= link_to "View details", recipe %>
+       </div> 
+   </div>
+   <div class="description">
+     <%= recipe.description %>
+   </div>
 </div>
