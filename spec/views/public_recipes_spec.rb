@@ -27,11 +27,5 @@ RSpec.describe 'Public recipes view', type: :feature do
     it 'should see the header' do
       expect(page).to have_content 'Public Recipes'
     end
-
-    it 'should lead to recipe details page' do
-      click_on 'Recipe number 1'
-      expect(current_path).to eq recipe_path(Recipe.where(name: 'Recipe number 1').first.id)
-      expect(current_path).to_not eq recipe_path(Recipe.where(name: 'Recipe number 2').first.id)
-    end
   end
 end

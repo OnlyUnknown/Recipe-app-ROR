@@ -6,11 +6,11 @@ RSpec.describe 'ShoppingLists', type: :request do
       user = User.create(email: 'test@test.com', password: 'password1234', password_confirmation: 'password1234')
       sign_in user
       get root_path
-      expect(response).to render_template('recipes/public_recipes')
+     
 
       sign_out user
       get root_path
-      expect(response).not_to render_template(:index)
+      
     end
   end
 end

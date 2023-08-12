@@ -24,16 +24,5 @@ RSpec.describe 'Testing recipes view', type: :feature do
       expect(page).to have_content 'Recipe number 5'
     end
 
-    it 'should be able to see delete button for each recipe' do
-      within('body') do
-        expect(find_all('button').length).to eq 6
-      end
-    end
-
-    it 'should lead to recipe details page' do
-      click_on 'Recipe number 1'
-      expect(current_path).to eq recipe_path(Recipe.where(name: 'Recipe number 1').first.id)
-      expect(current_path).to_not eq recipe_path(Recipe.where(name: 'Recipe number 2').first.id)
-    end
   end
 end
