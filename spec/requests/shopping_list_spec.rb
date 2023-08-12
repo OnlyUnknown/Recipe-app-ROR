@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'ShoppingLists', type: :request do
-  describe 'GET /shopping_list' do
+  describe 'GET /general_shopping_list' do
     it 'signs user in and out' do
-      user = User.create(email: 'test@test.com', password: 'password', password_confirmation: 'password')
+      user = User.create(email: 'test@test.com', password: 'password1234', password_confirmation: 'password1234')
       sign_in user
       get root_path
       expect(response).to render_template('recipes/public_recipes')

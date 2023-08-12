@@ -25,7 +25,7 @@ RSpec.describe 'Recipes', type: :request do
     before(:each) do
       user = User.create name: 'Tom', email: 'tom@example.com', password: 'password'
       recipe = Recipe.create(name: 'Pudding', cooking_time: 60, preparation_time: 20,
-                             description: 'Steps goes here', public: true, user:)
+                             description: 'Steps goes here', public: true, user:user)
       post user_session_path, params: { user: { email: user.email, password: user.password } }
       get recipe_path(recipe.id)
     end
@@ -40,7 +40,7 @@ RSpec.describe 'Recipes', type: :request do
 
     it 'should render correct content' do
       expect(response.body).to include('Pudding')
-      expect(response.body).to include('Cooking time: 60 ')
+      expect(response.body).to include('Cooking time: 60')
       expect(response.body).to include('Steps goes here')
     end
   end
