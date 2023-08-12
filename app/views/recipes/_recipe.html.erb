@@ -1,9 +1,9 @@
 <div id="<%= dom_id recipe %>" class="recipe-card">
    <div class="summary">
+   <%= link_to  recipe do %>
        <%= recipe.name %>
        <div class="btns">
-      <%= link_to "Remove", recipe, :confirm => "Are you sure?", :method => :delete %>
-      <%= link_to "View details", recipe %>
+      <%end%>
        </div> 
    </div>
    <div class="description">
