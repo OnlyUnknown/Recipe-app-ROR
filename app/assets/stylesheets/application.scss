@@ -209,3 +209,15 @@ body {
   .recipe-c-r {
   }
 }
+
+.shopping-list {
+  h1 {
+    text-align: center;
+  }
+  .details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+}
