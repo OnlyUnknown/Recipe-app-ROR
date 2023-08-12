@@ -42,15 +42,11 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
-gem 'rubocop', '>= 1.0', '< 2.0'
-
 # Use Sass to process CSS
-gem 'sassc-rails'
+# gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
-
-gem 'devise'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -72,5 +68,17 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 5.0'
 end
+
+group :development, :test do
+  %w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+    gem lib, git: "https://github.com/rspec/#{lib}.git", branch: 'main'
+  end
+end
+
+gem 'rails-controller-testing'
+
+gem 'devise'
+
+gem 'sassc'
