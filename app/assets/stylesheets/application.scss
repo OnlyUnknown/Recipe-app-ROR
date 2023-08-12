@@ -132,13 +132,13 @@ body {
 
   td,
   th {
-    border: 1px solid #dddddd;
+    border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
   }
 
   tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #ddd;
   }
 }
 
@@ -153,6 +153,7 @@ body {
   border-radius: 3px;
   padding: 1rem;
   display: flex;
+
   .summary {
     flex: 1;
     display: flex;
@@ -165,6 +166,7 @@ body {
       align-items: center;
     }
   }
+
   .description {
     flex: 2;
   }
@@ -177,6 +179,7 @@ body {
 
   .details {
     display: flex;
+
     .left {
       flex: 1;
     }
@@ -204,16 +207,13 @@ body {
   margin-bottom: 2rem;
   display: flex;
   gap: 2rem;
-  .recipe-c-l {
-  }
-  .recipe-c-r {
-  }
 }
 
 .shopping-list {
   h1 {
     text-align: center;
   }
+
   .details {
     display: flex;
     justify-content: center;
