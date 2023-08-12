@@ -11,15 +11,12 @@
   </head>
 
   <body>
-    <nav>
-    <ul>
-    <li><%= link_to "Foods", foods_path %></li>
-    <li><%= link_to "My recipes", recipes_path %></li>
-    <li><%= link_to "Public recipes", public_recipes_path %></li>
-    </ul>
-    </nav>
+     <%= render partial: "shared/header" %>
+  <div class="page row">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+  
+  </div>
   </body>
 </html>
