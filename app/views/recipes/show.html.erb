@@ -12,7 +12,7 @@
        <p>Cooking time: <%= recipe.cooking_time%></p>
      </div>
      <div class="right">
-      <%if recipe.user_id == current_user%>
+      <%if recipe.user_id == current_user.id%>
       <p>
         <strong>Public:</strong>
         <%= recipe.public %>
