@@ -5,31 +5,34 @@
   <% @recipes.each do |recipe| %>
     <% @precipe = RecipeFood.where(recipe_id: recipe.id)%>
     <div id="<%= dom_id recipe %>">
-  <p>
-    <h3><%= recipe.name %></h3>
-    <strong>by:</strong>
-    <%= recipe.user.name %>
-  </p>
+  
+        <div class="recipe-content">
+           <div class="recipe-c-l">
+              <h3><%= recipe.name%></h3>          
+              <p>
+                <strong>by:</strong>
+                <%= recipe.user.name %>
+              </p>
+           </div>
+           <div class="recipe-c-r">
+            <p>
+      <strong>Total food items:</strong>
+      <%=@precipe.length%>
+      </p>
+       <p>
+        <strong>Total price:</strong>
+        <% @totalv = 0 %>
+        <%@precipe.each do |pr|%>
+        <% @totalv += pr.food.price.to_i * pr.quantity.to_i %>
+        <%end%>   
+        $<%=@totalv%>
+      </p>
+           
+           </div>
+   
+        </div>
+    </div>
 
-  <p>
-  <strong>Total food items:</strong>
-  <%=@precipe.length%>
-</p>
-
-
-  <p>
-    <strong>Total price:</strong>
-    <% @totalv = 0 %>
-    <%@precipe.each do |pr|%>
-     <% @totalv += pr.food.price.to_i * pr.quantity.to_i %>
-     <%end%>   
-     $<%=@totalv%>
-  </p>
-
-</div>
-
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+   
   <% end %>
 </div>
