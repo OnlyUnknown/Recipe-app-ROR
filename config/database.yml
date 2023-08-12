@@ -22,10 +22,10 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # username: abdullah
   # password: <%= ENV["RECIPE_APP_ROR_DATABASE_PASSWORD"] %>
-  username: <%= ENV['RECIPE_APP_ROR_DATABASE_USERNAME'] %>
-  password: <%= ENV['RECIPE_APP_ROR_DATABASE_PASSWORD'] %>
-  # username: postgres
-  # password: password
+  # username: <%= ENV['RECIPE_APP_ROR_DATABASE_USERNAME'] %>
+  # password: <%= ENV['RECIPE_APP_ROR_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: password
 
 development:
   <<: *default
