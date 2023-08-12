@@ -18,8 +18,8 @@ RSpec.describe User, type: :model do
       before { visit '/users' }
       sleep(3)
       it 'shows that it has a pic' do
-        expect(page).to have_content("Tom")
+        expect(page).to have_content('Tom')
       end
+    end
   end
-end
 end
