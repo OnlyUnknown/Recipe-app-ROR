@@ -126,6 +126,7 @@ body {
 }
 
 .food-table {
+  margin-top: 1rem;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -138,7 +139,7 @@ body {
   }
 
   tr:nth-child(even) {
-    background-color: #ddd;
+    background-color: #f7f7f7;
   }
 }
 

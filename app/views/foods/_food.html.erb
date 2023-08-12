@@ -2,9 +2,7 @@
     <td> <%= food.name %></td>
     <td><%= food.measurement_unit %></td>
     <td><%= food.price %></td>
-    <td>
-     <button><%= link_to "Show details", food %></button>   
-     <button><%= link_to "Edit", edit_food_path(food) %></button>   
+    <td>  
      <button><%= link_to "Delete", food, :confirm => "Are you sure?", :method => :delete %></button>            
     </td>
 </tr>
