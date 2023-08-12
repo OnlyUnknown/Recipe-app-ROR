@@ -31,7 +31,7 @@
     <%= form.submit %>
   </div>
   <h1>store</h1>
-
+<%if @foods != nil%>
 <div id="foods">
 <% url = request.path_info%>
 <%if url.include?("edit") == false%>
@@ -40,4 +40,5 @@
   <% end %>
   <% end %>
 </div>
+<%end%>
 <% end %>
