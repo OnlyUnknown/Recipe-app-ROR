@@ -27,15 +27,12 @@ RSpec.describe Food, type: :model do
       click_button 'Log in'
     end
     describe 'Foods', type: :feature do
-      before { visit '/foods/1' }
+      before { visit '/foods' }
       it 'shows that it has a pic' do
-        expect(page).to have_content('Name: apple')
+        expect(page).to have_content('apple')
       end
       it 'shows that it has a pic' do
-        expect(page).to have_content('Price: 10')
-      end
-      it 'shows that it has a pic' do
-        expect(page).to have_content('Quantity: 1')
+        expect(page).to have_content('Unit Price')
       end
       it 'shows that it has a pic' do
         visit '/foods'

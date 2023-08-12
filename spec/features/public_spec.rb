@@ -32,14 +32,14 @@ RSpec.describe Recipe, type: :model do
     end
     describe 'public Recipe', type: :feature do
       before { visit '/public_recipes' }
-      it 'shows that it has a pic' do
-        expect(page).to have_content('cake')
+      it 'shows that it right content' do
+        expect(page).to have_content('Total price')
+      end
+      it 'shows that it right content' do
+        expect(page).to_not have_content('Total food items: 1')
       end
       it 'shows that it has a pic' do
-        expect(page).to_not have_content('pancake')
-      end
-      it 'shows that it has a pic' do
-        expect(page).to have_content('it is a cake')
+        expect(page).to have_content('by: Tom')
       end
     end
   end

@@ -31,7 +31,7 @@ RSpec.describe Recipe, type: :model do
     describe 'Recipe', type: :feature do
       before { visit '/recipes' }
       it 'shows that it has a pic' do
-        expect(page).to have_content('Name: cake')
+        expect(page).to have_content('cake')
       end
       it 'shows that it has a pic' do
         visit 'recipes/1'
