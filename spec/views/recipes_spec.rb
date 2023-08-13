@@ -23,6 +23,5 @@ RSpec.describe 'Testing recipes view', type: :feature do
       expect(page).to have_content 'Recipe number 4'
       expect(page).to have_content 'Recipe number 5'
     end
-
   end
 end
