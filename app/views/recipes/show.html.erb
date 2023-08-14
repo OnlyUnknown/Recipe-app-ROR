@@ -1,0 +1,67 @@
+<p style="color: green"><%= notice %></p>
+
+<% recipe = @recipe%>
+
+<div class="single-recipe">
+  <div class="top-header">
+  <h2><%= recipe.name%></h2>
+  </div>
+  <div class="details">
+     <div class="left">
+       <p>Preparation time: <%= recipe.preparation_time%></p>
+       <p>Cooking time: <%= recipe.cooking_time%></p>
+       <p>Steps goes here</p>
+     </div>
+     <div class="right">
+      <%if recipe.user_id == current_user.id%>
+      <p>
+        <strong>Public:</strong>
+        <%= recipe.public %>
+        <%= link_to "change the status", params[:id] + '/toggled'%>
+      </p>
+      <%end%>
+     </div>
+  </div>
+  <div class="single-recipe-actions">
+<%if @recipe.user_id == @current_user%>
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> | 
+   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+  <%= link_to "Add ingredient", params[:id] + "/new" %> |
+  <%end%>
+ 
+
+</div>
+  
+  <hr class="divider">
+ 
+  <table class="food-table">
+     <tr>
+       <th>Food</th>
+       <th>Quantity</th>
+       <th>Value</th>
+       <th>Actions</th>
+     </tr>
+   <% @recipe_foods.each do |recipe_food| %>
+  
+
+    <tr>
+      <td><%= recipe_food.food.name %></td>
+      <td><%= recipe_food.quantity %></td>
+      <td>
+      <%@value = recipe_food.quantity.to_i * recipe_food.food.price.to_i %>
+        $<%= @value %>
+      </td>
+      <td>
+        <button><%= link_to "Show details", recipe_food %></button>   
+        <button><%= link_to "Edit", edit_recipe_food_path(recipe_food) %></button>   
+        <button><%= link_to "Delete", recipe_food, :confirm => "Are you sure?", :method => :delete %></button>            
+      </td>
+    
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+
+
+

@@ -1,0 +1,9 @@
+<tr id="<%= dom_id food %>">
+     <td><%= link_to food.name, food %></td>
+    <td><%= food.measurement_unit %></td>
+    <td><%= food.price %></td>
+    <td> 
+     <button><%= link_to "Delete", food, :confirm => "Are you sure?", :method => :delete %></button>            
+    </td>
+</tr>
+
