@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Recipe app] <a name="about-project"></a>
+# 📖 [Blog app] <a name="about-project"></a>
 
 **[Recipe app]** it is about cooking recipes and you can add or delete recipes
 
